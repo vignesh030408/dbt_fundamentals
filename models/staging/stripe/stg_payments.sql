@@ -8,4 +8,4 @@ with payments as (
         CREATED AS CREATED_AT
   from  raw.stripe.payment
 )
-SELECT * FROM payments
+select * from payments
