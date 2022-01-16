@@ -2,13 +2,11 @@ version: 2
 
 sources:
   - name: jaffle_shop
-<<<<<<< HEAD
     database: raw
     schema: jaffle_shop
     tables:
       - name: customers
       - name: orders
-=======
     description: A snowflake application database
     database: raw
     tables:
@@ -33,4 +31,3 @@ sources:
         freshness:
           warn_after: {count: 12, period: hour}
           error_after: {count: 24, period: hour}
->>>>>>> 0d93a45e0215baa183d96d999b1016e4a2ff8218
