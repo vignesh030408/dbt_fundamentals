@@ -1,11 +1,11 @@
-with payments as (
-  select
-        ID,
-        ORDERID AS ORDER_ID,
-        PAYMENTMETHOD AS PAYMENT_METHOD,
-        STATUS,
-        AMOUNT/100 AS AMOUNT,
-        CREATED AS CREATED_AT
-  from  raw.stripe.payment
-)
-select * from payments
+select
+    id as payment_id,
+    orderid as order_id,
+    paymentmethod as payment_method,
+    status,
+
+    -- amount is stored in cents, convert it to dollars
+    {{ cents_to_dollars('amount', 4) }} as amount,
+    created as created_at
+
+from {{ source('stripe','payment') }}

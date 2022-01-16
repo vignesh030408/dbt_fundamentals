@@ -1,7 +1,8 @@
 version: 2
 
 sources:
-  - name: jaffle_shop
+  - name: stripe
     database: raw
     tables:
-      - name: payments
+      - name: payment
+  
